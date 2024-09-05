@@ -1,0 +1,7 @@
+.vscode/
+Project Backups/
+*.eep
+*.elf
+*.bin
+*.lst
+*bootloader.hex
