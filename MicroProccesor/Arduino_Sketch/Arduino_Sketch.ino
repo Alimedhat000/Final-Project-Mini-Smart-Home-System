@@ -1,6 +1,7 @@
 #include <Servo.h>
 
 bool face_rec = true;
+bool checkPASS = false;
 const int motor_Driver_Input1 = PIN_PB0;
 const int motor_Driver_Input2 = PIN_PB1;
 const int motor_Driver_Enable = PIN_PB3;
@@ -17,6 +18,15 @@ float THERMISTORNOMINAL = 10000, TEMPERATURENOMINAL = 25, SERIESRESISTOR = 10000
 const int Keypad_pin = PIN_PC0;
 bool keyPressed = false;
 
+const int RedLED=PIN_PB5;
+const int GreenLED=PIN_PB6;
+const int BlueLED=PIN_PB7;
+
+const int PIR=PIN_PC4;
+
+
+const int buzzer=PIN_PD3;
+
 void setup() {
   Serial.begin(9600);
 
@@ -29,6 +39,16 @@ void setup() {
   Door.attach(Servo_pin);
 
   digitalWrite(testLED, LOW);
+
+  pinMode(RedLED,OUTPUT);
+  pinMode(BlueLED,OUTPUT);
+  pinMode(GreenLED,OUTPUT);
+
+
+  pinMode(PIR,INPUT);
+
+
+  pinMode(buzzer,OUTPUT);
 }
 
 void startFan() {
@@ -119,6 +139,96 @@ byte getkeyvalue() {
   }
   return 0;
 }
+void lightGreen()
+{
+digitalWrite(GreenLED,HIGH);
+digitalWrite(RedLED,LOW);
+digitalWrite(BlueLED,LOW);
+}
+void lightBlue()
+{
+digitalWrite(GreenLED,LOW);
+digitalWrite(RedLED,LOW);
+digitalWrite(BlueLED,HIGH);
+}
+void lightRed(){
+ digitalWrite(GreenLED,LOW);
+digitalWrite(RedLED,HIGH);
+digitalWrite(BlueLED,LOW); 
+}
+int detectMotion(){
+return digitalRead(PIR);
+}
+void beebBuzzer(){
+  digitalWrite(buzzer,HIGH);
+  delay(500);
+  digitalWrite(buzzer,LOW);
+}
+
+void controlFanSpeed(float temperature) {
+  int speed;
+  if (temperature > 30) {
+    speed = 255;  // Max speed
+  } else if (temperature > 20) {
+    speed = map(temperature, 20, 30, 128, 255);
+  } else {
+    speed = 128;
+  }
+  startFan();
+  SetFanSpeed(speed);
+}
+void displayTempOnRGB(float temperature) {
+  if (temperature > 30) {
+    lightRed();
+  } else if (temperature > 20 && temperature <= 30) {
+    lightGreen();
+  } else {
+    lightBlue();
+  }
+}
+void controlLight(int lightLevel){
+if (lightLevel < 300) {
+    Serial.println("Room is dark: Turning lights ON.");
+  } else {
+    Serial.println("Room is bright: Turning lights OFF.");
+  }
+}
 void loop() {
-  getKey();
+   char pass[5]; 
+  Serial.println("\nEnter Password:");
+  for (int i = 0; i < 4; i++) {
+    pass[i]=getkeyvalue();
+    while (pass[i] == 0) { 
+      pass[i] = getkeyvalue();
+    }
+    Serial.print(pass[i]);  
+    delay(300);        
+  }
+
+  pass[4] = '\0'; 
+
+  if (strcmp(pass, "1234") == 0) {
+    OpenDoor();
+    Serial.println("\nCorrect Password");
+    int lightLevel = analogRead(LDR_pin);
+    Serial.print("Light level: ");
+    Serial.println(lightLevel);
+    controlLight(lightLevel);
+
+    float temperature = GetTemp();
+    Serial.print("Temperature: ");
+    Serial.println(temperature);
+    displayTempOnRGB(temperature);
+    controlFanSpeed(temperature); 
+    if (detectMotion() == HIGH) {
+      Serial.println("Motion detected: Someone is inside.");
+    } else {
+      Serial.println("No motion detected: House is empty.");
+    }
+    delay(5000);
+  } else {
+    Serial.println("\nIncorrect Password");
+    beebBuzzer();
+
+  }
 }
