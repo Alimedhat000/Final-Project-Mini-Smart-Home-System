@@ -9,12 +9,6 @@ static int Servo_pin = PIN_PB2;
 
 int ldrpin=PIN_PC2;
 int testLED=PIN_PB4;
-
-
-int buzzer_pin = PIN_PB5;
-
-
-int PIR_PIN= PIN_PB6;
 Servo Door;
 
 void setup() {
@@ -35,12 +29,6 @@ void setup() {
 
 
    digitalWrite(testLED,HIGH); 
-
-
-   pinMode(buzzer_pin,OUTPUT);
-
-
-   pinMode(PIR_PIN, INPUT);
 }
 
 void SetFanSpeed(int value) {
@@ -55,11 +43,10 @@ void OpenDoor() {
 
 void loop() {
 
- int sensorState = digitalRead(PIR_PIN);
-
-  if (sensorState == HIGH) {
-    digitalWrite(testLED, HIGH);
+  int ldrValue = analogRead(ldrpin);
+  if (ldrValue > 800) {
+    digitalWrite(testLED,LOW);
   } else {
-    digitalWrite(testLED, LOW);
+    digitalWrite(testLED,HIGH);  
   }
 }
