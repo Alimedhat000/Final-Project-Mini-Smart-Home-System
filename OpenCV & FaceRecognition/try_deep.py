@@ -4,7 +4,7 @@ import os, shutil
 
 
 cap = cv2.VideoCapture(0)
-db_path= "C:\\D\\mind cloud\\Tasks software\\face detection\\software\\database"
+db_path= ""
 
 #add new face to the database
 def add_to_database(name, db_path):
@@ -59,12 +59,12 @@ while True:
             ##if homeowners approve adding to database:{
             name= input('enter name of person')                          #name entered by homeowners 
             add_to_database(name, db_path)                               #add new person to the database} 
-            ##elif owners aproves openning the door only : open the door
+            ##elif owners approves opening the door only : open the door
             print('not found')
 
         cv2.imshow("result", frame)
 
-        #if homeowner want's to delete image:{
+        #if homeowner wants to delete image:{
         #name= input('enter name of person to delete')
         #delete_faces(name, db_path)}
 
