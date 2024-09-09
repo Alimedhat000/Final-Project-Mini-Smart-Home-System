@@ -2,8 +2,6 @@
 
 This project utilizes **YuNet** for face detection and **DeepFace** for face recognition. It captures faces from a webcam feed, saves the detected face to a local folder, and compares it against a database of known faces using DeepFace.
 
-
-
 ## Overview
 
 This application uses OpenCV's **YuNet face detection** model and **DeepFace** for face recognition. It performs real-time face detection via a webcam, captures detected faces, and compares them with images stored in a local database. If a face match is found, it will display the name of the person; otherwise, it will mark the face as "Unknown."
@@ -57,4 +55,13 @@ This application uses OpenCV's **YuNet face detection** model and **DeepFace** f
 ### Key Components
 
 - **YuNet for Face Detection**: YuNet is an ONNX-based face detector model that is lightweight and efficient, making it suitable for real-time detection.
-- **DeepFace for Face Recognition**: DeepFace provides a powerful face recognition framework supporting various models such as Facenet, VGG-Face, etc.
+- **DeepFace for Face Recognition with Facenet model**: DeepFace provides a powerful face recognition framework and in this project, it uses the Facenet model for recognizing faces.
+
+## Conclusion from faceDetection.ipynb
+
+The `faceDetection.ipynb` notebook demonstrates the effectiveness of the face detection and recognition system. The key conclusions are:
+
+- The YuNet model is capable of detecting faces in real-time with high accuracy.
+- DeepFace successfully recognizes faces from the database and annotates them correctly.
+- The system is efficient and performs well under various lighting conditions and angles.
+- The combination of YuNet for detection and DeepFace for recognition with the Facenet model provides a robust solution for real-time face recognition applications.
