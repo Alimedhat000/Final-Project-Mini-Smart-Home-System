@@ -18,12 +18,12 @@ extern bool CorrectPass;
 extern bool PressedEnter;
 
 // Motor driver pins
-#define MOTOR_DRIVER_INPUT1 PIN_PB0
-#define MOTOR_DRIVER_INPUT2 PIN_PB1
-#define MOTOR_DRIVER_ENABLE PIN_PB4
+#define MOTOR_DRIVER_INPUT1 PIN_PD2
+#define MOTOR_DRIVER_INPUT2 PIN_PD4
+#define MOTOR_DRIVER_ENABLE PIN_PB3
 
 // Servo configuration
-#define SERVO_PIN PIN_PB2
+#define SERVO_PIN PIN_PB1
 
 // Sensors
 #define LDR_PIN PIN_PC2
@@ -38,9 +38,9 @@ extern bool PressedEnter;
 
 // LEDs
 #define TEST_LED PIN_PB0
-#define RED_LED PIN_PB5
-#define GREEN_LED PIN_PB6
-#define BLUE_LED PIN_PB7
+#define RED_LED PIN_PD5
+#define GREEN_LED PIN_PD6
+#define BLUE_LED PIN_PD7
 
 // PIR sensor
 #define PIR_PIN PIN_PC4

@@ -1,3 +1,4 @@
+#include "Arduino.h"
 #include "HardwareSerial.h"
 #include <Servo.h>
 #include "Defines.h"
@@ -53,13 +54,15 @@ void HandleKeypadInput(char key) {
   if (key == '#') {  // Enter Key
     CheckPassword();
     Serial.println();
+  } else if (key == 0) {
+    return;
   } else if (Entered_index < 15) {
     Serial.print(key);
     Entered_index++;
     strncat(Entered_Pass, &key, 1);
   } else {
     Serial.println(F("Password length exceeded!"));
-    BeepBuzzer();       // Sound the buzzer or indicate an error
+    BeepBuzzer();            // Sound the buzzer or indicate an error
     Entered_Pass[0] = '\0';  // Clear the entered password
     Entered_index = 0;
   }
@@ -86,48 +89,55 @@ void CheckPassword() {
 
 void OpenDoor() {
   Door.write(90);
+  Serial.println("DOOR Opened");
 }
 void CLoseDoor() {
   Door.write(0);
+  Serial.println("DOOR Closed");
 }
 
 char GetKeyValue() {
-  // int reading = 0;
-  // for (int i = 0; i < 5; i++) {
-  //   reading += analogRead(KEYPAD_PIN);
-  //   delay(5);  // Reduced delay for better responsiveness
-  // }
-  int averageADC = analogRead(KEYPAD_PIN);
 
-  static int lastADC = -1;
-  static unsigned long lastReadTime = 0;
-  unsigned long currentTime = millis();
+  int myADC = analogRead(KEYPAD_PIN);
 
-  if (abs(averageADC - lastADC) > 20 || currentTime - lastReadTime > 150) {
-    lastADC = averageADC;
-    lastReadTime = currentTime;
 
-    // Simplified mapping
-    if (averageADC <= 30) return '1';
-    if (averageADC <= 99) return '2';
-    if (averageADC <= 170) return '3';
-    if (averageADC <= 230) return 'A';
-    if (averageADC <= 320) return '4';
-    if (averageADC <= 350) return '5';
-    if (averageADC <= 400) return '6';
-    if (averageADC <= 430) return 'B';
-    if (averageADC <= 490) return '7';
-    if (averageADC <= 520) return '8';
-    if (averageADC <= 545) return '9';
-    if (averageADC <= 575) return 'C';
-    if (averageADC <= 604) return '*';
-    if (averageADC <= 624) return '0';
-    if (averageADC <= 644) return '#';
-    if (averageADC <= 660) return 'D';
-
-    return 0;
+    switch (myADC) {
+      case 0 ... 30:
+        return '1';
+      case 70 ... 99:
+        return '2';
+      case 110 ... 170:
+        return '3';
+      case 180 ... 230:
+        return 'A';
+      case 240 ... 260:
+        return '4';
+      case 270 ... 300:
+        return '5';
+      case 301 ... 340:
+        return '6';
+      case 341 ... 370:
+        return 'B';
+      case 371 ... 410:
+        return '7';
+      case 411 ... 440:
+        return '8';
+      case 441 ... 460:
+        return '9';
+      case 461 ... 480:
+        return 'C';
+      case 481 ... 510:
+        return '*';
+      case 511 ... 525:
+        return '0';
+      case 526 ... 540:
+        return '#';
+      case 541 ... 560:
+        return 'D';
+      default:
+        return 0;
+    
   }
-  return 0;
 }
 
 int GetTemp() {
@@ -171,7 +181,7 @@ void LightRed() {
 
 void DisplayTempOnRGB(float temperature) {
   Serial.print("TEMP :");
-  Serial.print(temperature);
+  Serial.println(temperature);
   if (temperature > 30) {
     LightRed();
   } else if (temperature > 20) {
@@ -185,6 +195,11 @@ void BeepBuzzer() {
   digitalWrite(BUZZER_PIN, HIGH);
   delay(500);
   digitalWrite(BUZZER_PIN, LOW);
+}
+void StartFan() {
+  digitalWrite(MOTOR_DRIVER_INPUT2, LOW);
+  digitalWrite(MOTOR_DRIVER_INPUT1, HIGH);
+  SetFanSpeed(0);
 }
 
 void SetFanSpeed(int value) {
@@ -216,6 +231,10 @@ void ControlLight() {
   int lightLevel = analogRead(LDR_PIN);
   Serial.print(F("LIGHT LEVEL: "));
   Serial.println(lightLevel);
-  int brightness = map(lightLevel, 0, 1023, 255, 0);
-  analogWrite(TEST_LED, brightness);
+  if( lightLevel <  250 ){
+    digitalWrite(TEST_LED,HIGH);
+  }
+  else{
+    digitalWrite(TEST_LED,LOW);
+  }
 }
