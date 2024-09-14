@@ -1,22 +1,33 @@
 import cv2
 import os
+import logging
+
+# Suppress TensorFlow logs and warnings
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+import tensorflow as tf
+# Suppress TensorFlow warnings related to deprecation
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+tf.get_logger().setLevel('ERROR')
+
 from deepface import DeepFace
 import tkinter as tk
 from tkinter import simpledialog, messagebox, Listbox, Scrollbar, Toplevel
 from PIL import Image, ImageTk
 import time
 import serial
+from pathlib import Path
 
 
-db_path = r".\Images"
-temp_image_path = 'detected_face.jpg'
+db_path = (Path(__file__).resolve().parent / 'Images').as_posix()
+temp_image_path = (Path(__file__).resolve().parent / 'detected_face.jpg').as_posix()
 
 # Initialize video capture
 cap = cv2.VideoCapture(0)
 
 # Initialize face detector
 detector = cv2.FaceDetectorYN.create(
-    model='face_detection_yunet_2023mar.onnx',
+    model=(Path(__file__).resolve().parent / 'face_detection_yunet_2023mar.onnx').as_posix(),
     config='',
     input_size=(640, 480),
     score_threshold=0.5,
@@ -26,8 +37,16 @@ detector = cv2.FaceDetectorYN.create(
 # Variable to track the time an unknown face has been detected
 unknown_start_time = None
 unknown_detected = False
+last_recognized_face = None  # Track the last recognized face
 
+# Initialize serial communication
+ser = serial.Serial('COM4', 19200)
 
+def receive_data():
+    if ser.in_waiting > 0:
+        received_data = ser.readline().decode('utf-8').rstrip()  # Read and decode received data
+        print(f"Received from ATmega8A: {received_data}")
+        
 def add_to_database(name, frame):
     # Detect the face in the frame
     ret, faces = detector.detect(frame)
@@ -116,6 +135,7 @@ def show_change_password_dialog():
         new_password = password_entry.get()
         if new_password:
             global saved_password
+            ser.write(f"CHANGE_PASS:{new_password}".encode())
             saved_password = new_password
             messagebox.showinfo("Success", "Password changed successfully.")
             change_password_window.destroy()  # Close the window after saving
@@ -144,7 +164,7 @@ def show_open_door_window():
 
 
 def update_frame():
-    global unknown_start_time, unknown_detected
+    global frame_counter,unknown_start_time, unknown_detected, last_recognized_face
 
     ret, frame = cap.read()
     if ret:
@@ -156,11 +176,17 @@ def update_frame():
                 out_image = frame[y:y + h, x:x + w]
                 cv2.imwrite(temp_image_path, out_image)
                 try:
-                    res = DeepFace.find(img_path=temp_image_path, db_path=db_path, enforce_detection=False, model_name="Facenet")
+                    
+                    res = DeepFace.find(img_path=temp_image_path, db_path=db_path, enforce_detection=False,
+                                        model_name="Facenet", silent = True)
                     if len(res[0]) > 0:
                         name = os.path.basename(res[0]['identity'][0]).split("_")[0]
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                         cv2.putText(frame, name, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+                        # If the recognized face is different from the last one, send a serial message
+                        if last_recognized_face != name:
+                            ser.write("FACE_DETECTED".encode())
+                            last_recognized_face = name
                         unknown_detected = False
                         unknown_start_time = None
                     else:
@@ -185,14 +211,18 @@ def update_frame():
             # No faces detected, reset unknown face tracking
             unknown_detected = False
             unknown_start_time = None
+            last_recognized_face = None  # Reset the last recognized face when no face is detected
 
         cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         img = Image.fromarray(cv2image)
         img = ImageTk.PhotoImage(img)
         panel.imgtk = img
         panel.config(image=img)
+        receive_data()
+        
 
-    root.after(10, update_frame)
+    root.after(50, update_frame)
+
 
 
 # Initialize the main window
