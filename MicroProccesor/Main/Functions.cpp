@@ -53,11 +53,10 @@ void HandleSerialInput() {
 void HandleKeypadInput(char key) {
   if (key == '#') {  // Enter Key
     CheckPassword();
-    Serial.println();
   } else if (key == 0) {
     return;
   } else if (Entered_index < 15) {
-    Serial.print(key);
+    Serial.println(key);
     Entered_index++;
     strncat(Entered_Pass, &key, 1);
   } else {
@@ -73,6 +72,7 @@ void ChangePassword(const char* new_Pass) {
   Cur_Pass[sizeof(Cur_Pass) - 1] = '\0';  // Null-terminate
   Serial.println(F("Password Changed Successfully."));
   Entered_Pass[0] = '\0';  // Clear the entered password
+  Entered_index = 0;
   CorrectPass = false;
 }
 
@@ -85,6 +85,7 @@ void CheckPassword() {
     Serial.println(F("Incorrect Password."));
   }
   Entered_Pass[0] = '\0';  // Clear the entered password
+  Entered_index = 0;
 }
 
 void OpenDoor() {
@@ -219,11 +220,11 @@ void ControlFanSpeed(float temperature) {
 }
 
 void DetectMotion() {
-  if (digitalRead(PIR_PIN)) {
+  if (analogRead(PIR_PIN) > 500) {
     Serial.println(F("Motion detected: Someone is inside."));
-    digitalWrite(TEST_LED, HIGH);
-    delay(1000);
-    digitalWrite(TEST_LED, LOW);
+  }
+  else{
+    Serial.println(F("NO Motion detected"));
   }
 }
 
@@ -238,3 +239,4 @@ void ControlLight() {
     digitalWrite(TEST_LED,LOW);
   }
 }
+
