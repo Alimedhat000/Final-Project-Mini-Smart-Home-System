@@ -5,6 +5,5 @@ Project Backups/
 *.bin
 *.lst
 *.jpg
-*.jpeg
 *bootloader.hex
 *.workspace
