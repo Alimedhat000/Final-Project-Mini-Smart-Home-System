@@ -40,12 +40,12 @@ unknown_detected = False
 last_recognized_face = None  # Track the last recognized face
 
 # Initialize serial communication
-ser = serial.Serial('COM4', 19200)
+# ser = serial.Serial('COM4', 19200)
 
-def receive_data():
-    if ser.in_waiting > 0:
-        received_data = ser.readline().decode('utf-8').rstrip()  # Read and decode received data
-        print(f"Received from ATmega8A: {received_data}")
+# def receive_data():
+#     if ser.in_waiting > 0:
+#         received_data = ser.readline().decode('utf-8').rstrip()  # Read and decode received data
+#         print(f"Received from ATmega8A: {received_data}")
         
 def add_to_database(name, frame):
     # Detect the face in the frame
@@ -135,7 +135,7 @@ def show_change_password_dialog():
         new_password = password_entry.get()
         if new_password:
             global saved_password
-            ser.write(f"CHANGE_PASS:{new_password}".encode())
+            # ser.write(f"CHANGE_PASS:{new_password}".encode())
             saved_password = new_password
             messagebox.showinfo("Success", "Password changed successfully.")
             change_password_window.destroy()  # Close the window after saving
@@ -185,7 +185,7 @@ def update_frame():
                         cv2.putText(frame, name, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
                         # If the recognized face is different from the last one, send a serial message
                         if last_recognized_face != name:
-                            ser.write("FACE_DETECTED".encode())
+                            # ser.write("FACE_DETECTED".encode())
                             last_recognized_face = name
                         unknown_detected = False
                         unknown_start_time = None
@@ -218,7 +218,7 @@ def update_frame():
         img = ImageTk.PhotoImage(img)
         panel.imgtk = img
         panel.config(image=img)
-        receive_data()
+        # receive_data()
         
 
     root.after(50, update_frame)
