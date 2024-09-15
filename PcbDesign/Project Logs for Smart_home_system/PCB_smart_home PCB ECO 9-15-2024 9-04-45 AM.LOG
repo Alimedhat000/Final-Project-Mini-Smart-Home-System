@@ -1,0 +1,8 @@
+Change Component Comment : Designator=J2 Old Comment=TSM-108-01-L-SV New Comment=connector;str header;single row;.1 cont centers;.095 tail;gold or gtx;36 contact
+Change component parameters: Designator = "J2" ("J2"); Footprint = "Header"; UniqueID = "\NRZUROPB" ("\NRZUROPB")
+Change component parameters (AddParameter): Name = "Created By"; Value = "R Kanjee"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Rating"; Value = "3Amps Continuous"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Date Created"; Value = "1 March 2015"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "FCI"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part No."; Value = "68000-236HLF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RS Stock No."; Value = "2509565626"; VariantName = "[No Variations]"

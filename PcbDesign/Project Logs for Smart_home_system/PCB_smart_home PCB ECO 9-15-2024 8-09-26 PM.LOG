@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=GND Pin=D1-1
+Change Component Footprint: Designator=D1 Old Footprint=FP-LTST-C191TBKT-MFG New Footprint=PCBComponent_1
+Change Component Comment : Designator=D1 Old Comment=LTST-C191TBKT New Comment=KPT-1608ZGC
+Change Managed Component Library Link : Designator=D1 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID= Old ItemGUID=67FF2ADF-9763-4FBF-9C51-879727C8E12E New ItemGUID= Old RevisionGUID=402666A6-DBBB-4A3E-9E1F-17C7D990BCF7 New RevisionGUID=
+Change component parameters: Designator = "D1" ("D1"); Footprint = "FP-LTST-C191TBKT-MFG"; UniqueID = "\WRRTTXCF" ("\WRRTTXCF")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/KPT-1608ZGC/Kingbright/datasheet/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/KPT-1608ZGC/Kingbright/view-part/?welcome=home&ref=search&t=LED+SMD"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3Description"; Value = "LCSC link"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3URL"; Value = "https://www.lcsc.com/product-detail/LED-Indication-Discrete_Kingbright-KPT-1608ZGC_C598364.html"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "manufacturer"; Value = "Kingbright"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "manufacturer part number"; Value = "KPT-1608ZGC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "supplier part number"; Value = "C598364"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D1-2
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=R1-2
+Added Net: Name=NetD1_1

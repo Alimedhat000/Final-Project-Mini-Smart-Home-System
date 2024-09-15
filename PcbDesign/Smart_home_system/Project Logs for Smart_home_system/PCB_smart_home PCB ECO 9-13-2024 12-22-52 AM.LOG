@@ -1,0 +1,289 @@
+Added Component: Designator=B1(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/CMT-1271-88-SMT-TR/CUI%20Devices/view-part/?ref=search&t=Buzzer%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/CMT-1271-88-SMT-TR/CUI%20Devices/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "CUI"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "CMT-1271-88-SMT-TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C3811771"; VariantName = "[No Variations]"
+Added Component: Designator=C1(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/view-part/?ref=search&t=1206%20cap%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "GRM31C5C2A104JA01L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C405303"; VariantName = "[No Variations]"
+Added Component: Designator=C2(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/view-part/?ref=search&t=1206%20cap%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "GRM31C5C2A104JA01L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C405303"; VariantName = "[No Variations]"
+Added Component: Designator=C3(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/view-part/?ref=search&t=1206%20cap%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "GRM31C5C2A104JA01L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C405303"; VariantName = "[No Variations]"
+Added Component: Designator=C4(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/view-part/?ref=search&t=1206%20cap%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "GRM31C5C2A104JA01L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C405303"; VariantName = "[No Variations]"
+Added Component: Designator=C5(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/view-part/?ref=search&t=1206%20cap%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "GRM31C5C2A104JA01L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C405303"; VariantName = "[No Variations]"
+Added Component: Designator=C6(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/view-part/?ref=search&t=1206%20cap%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/GRM31C5C2A104JA01L/Murata/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "GRM31C5C2A104JA01L"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C405303"; VariantName = "[No Variations]"
+Added Component: Designator=J1(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/PJ-002AH-SMT-TR/CUI%20Devices/view-part/?ref=search&t=DC%20connector%20SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/PJ-002AH-SMT-TR/CUI%20Devices/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "CUI"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "PJ-002AH-SMT-TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "package"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C22434687"; VariantName = "[No Variations]"
+Added Component: Designator=J2(SAMTEC_TSM-108-01-L-SV)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSM-108-01-L-SV"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J3(SAMTEC_TSM-108-01-L-SV)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSM-108-01-L-SV"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LDR(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/RS1G/Taiwan%20Semiconductor/view-part/?ref=search&t=LDR%20sensor%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/RS1G/Taiwan%20Semiconductor/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "SMC(Sangdest Microelectronicstronic (Nanjing))"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part time"; Value = "RS1G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part time"; Value = "C260336"; VariantName = "[No Variations]"
+Added Component: Designator=R1(RESC1005X04N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131530_PANASONIC-ERJ-U14F1000U_C1014086.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "PANASONIC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part Number"; Value = "ERJ-U14F1000U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Lcsc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier part number"; Value = "C1014086"; VariantName = "[No Variations]"
+Added Component: Designator=R2(RESC1005X04N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131530_PANASONIC-ERJ-U14F1000U_C1014086.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "PANASONIC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part Number"; Value = "ERJ-U14F1000U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Lcsc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier part number"; Value = "C1014086"; VariantName = "[No Variations]"
+Added Component: Designator=R3(RESC1005X04N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131530_PANASONIC-ERJ-U14F1000U_C1014086.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "PANASONIC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part Number"; Value = "ERJ-U14F1000U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Lcsc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier part number"; Value = "C1014086"; VariantName = "[No Variations]"
+Added Component: Designator=R4(RESC1005X04N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131530_PANASONIC-ERJ-U14F1000U_C1014086.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "PANASONIC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part Number"; Value = "ERJ-U14F1000U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Lcsc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier part number"; Value = "C1014086"; VariantName = "[No Variations]"
+Added Component: Designator=RGB LED(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/ASMB-TTF2-0B20B/Broadcom%20%2F%20Avago/view-part/?ref=search&t=RGB%20led%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/ASMB-TTF2-0B20B/Avago%20Technologies/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "LCSC link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://www.lcsc.com/product-detail/RGB-LEDs_Broadcom-Limited-ASMB-TTF2-0B20B_C6126294.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "Broadcom Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part number"; Value = "ASMB-TTF2-0B20B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C6126294"; VariantName = "[No Variations]"
+Added Component: Designator=RT1(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/datasheet/lcsc_datasheet_2401291008_Murata-Electronics-NCU15XH103D6SRC_C17294780.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "NCU15XH103D6SRC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "lcsc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C17294780"; VariantName = "[No Variations]"
+Added Component: Designator=S1(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/TS16-1212-85-BK-100-SMT-TR/CUI%20Devices/view-part/?ref=search&t=switch%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/TS16-1212-85-BK-100-SMT-TR/CUI%20Devices/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor"; Value = "CUI"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufactor part time"; Value = "TS16-1212-85-BK-100-SMT-TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C6338790"; VariantName = "[No Variations]"
+Added Component: Designator=U1(TQFP80P900X900X120-32N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/datasheet/lcsc_datasheet_1810161120_Microchip-Tech-ATMEGA8A-AU_C16190.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Microchip Tech"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "ATMEGA8A-AU"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier part number"; Value = "C16190"; VariantName = "[No Variations]"
+Added Component: Designator=U2(PCBComponent_1)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "snapeda link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/MC78M05ACDTRKG/onsemi/view-part/?ref=search&t=regulator%205v%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/MC78M05ACDTRKG/onsemi/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "LCSC link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://www.lcsc.com/product-detail/Voltage-Regulators-Linear-Low-Drop-Out-LDO-Regulators_onsemi-MC78M05ACDTRKG_C232660.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "onsemi"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "MC78M05ACDTRKG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C232660"; VariantName = "[No Variations]"
+Added Component: Designator=U3(SOP127P1030X265-20N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STMicroelectronics-L293DD013TR_C21610.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "L293DD013TR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C21610"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=BUZZER Pin=B1-1
+Added Pin To Net: NetName=GND Pin=B1-2
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=+5 Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=XTAL1 Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=XTAL2 Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=+5 Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=+5 Pin=C6-2
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Added Pin To Net: NetName=NetC1_1 Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=+5 Pin=J2-01
+Added Pin To Net: NetName=GND Pin=J2-02
+Added Pin To Net: NetName=KEYPAD Pin=J2-04
+Added Pin To Net: NetName=SERVO Pin=J2-05
+Added Pin To Net: NetName=PIR Pin=J2-06
+Added Pin To Net: NetName=MOTOR1 Pin=J2-07
+Added Pin To Net: NetName=MOTOR2 Pin=J2-08
+Added Pin To Net: NetName=TX Pin=J3-01
+Added Pin To Net: NetName=RX Pin=J3-02
+Added Pin To Net: NetName=SCK Pin=J3-03
+Added Pin To Net: NetName=MISO Pin=J3-04
+Added Pin To Net: NetName=EN1 Pin=J3-05
+Added Pin To Net: NetName=+12 Pin=J3-08
+Added Pin To Net: NetName=+5 Pin=LDR-1
+Added Pin To Net: NetName=LDR Pin=LDR-2
+Added Pin To Net: NetName=+5 Pin=R1-1
+Added Pin To Net: NetName=NetD1_1 Pin=R1-2
+Added Pin To Net: NetName=RESET Pin=R2-1
+Added Pin To Net: NetName=+5 Pin=R2-2
+Added Pin To Net: NetName=NetR3_1 Pin=R3-1
+Added Pin To Net: NetName=NTC Pin=R3-2
+Added Pin To Net: NetName=LDR Pin=R4-1
+Added Pin To Net: NetName=GND Pin=R4-2
+Added Pin To Net: NetName=RED Pin=RGB LED-1
+Added Pin To Net: NetName=GND Pin=RGB LED-2
+Add Pin To Net: Unknown Pin: Pin RGB LED-3
+Add Pin To Net: Unknown Pin: Pin RGB LED-4
+Add Pin To Net: Unknown Pin: Pin RGB LED-5
+Add Pin To Net: Unknown Pin: Pin RGB LED-6
+Added Pin To Net: NetName=GND Pin=RT1-1
+Added Pin To Net: NetName=NetR3_1 Pin=RT1-2
+Added Pin To Net: NetName=GND Pin=S1-1
+Added Pin To Net: NetName=RESET Pin=S1-2
+Added Pin To Net: NetName=BUZZER Pin=U1-1
+Added Pin To Net: NetName=IN2 Pin=U1-2
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=+5 Pin=U1-4
+Added Pin To Net: NetName=GND Pin=U1-5
+Added Pin To Net: NetName=+5 Pin=U1-6
+Added Pin To Net: NetName=XTAL1 Pin=U1-7
+Added Pin To Net: NetName=XTAL2 Pin=U1-8
+Added Pin To Net: NetName=RED Pin=U1-9
+Added Pin To Net: NetName=GREEN Pin=U1-10
+Added Pin To Net: NetName=BLUE Pin=U1-11
+Added Pin To Net: NetName=SERVO Pin=U1-13
+Added Pin To Net: NetName=EN1 Pin=U1-15
+Added Pin To Net: NetName=MISO Pin=U1-16
+Added Pin To Net: NetName=SCK Pin=U1-17
+Added Pin To Net: NetName=+5 Pin=U1-18
+Added Pin To Net: NetName=+5 Pin=U1-20
+Added Pin To Net: NetName=GND Pin=U1-21
+Added Pin To Net: NetName=KEYPAD Pin=U1-23
+Added Pin To Net: NetName=LDR Pin=U1-25
+Added Pin To Net: NetName=NTC Pin=U1-26
+Added Pin To Net: NetName=PIR Pin=U1-27
+Added Pin To Net: NetName=RESET Pin=U1-29
+Added Pin To Net: NetName=RX Pin=U1-30
+Added Pin To Net: NetName=TX Pin=U1-31
+Added Pin To Net: NetName=IN1 Pin=U1-32
+Added Pin To Net: NetName=NetC1_1 Pin=U2-1
+Added Pin To Net: NetName=+5 Pin=U2-2
+Add Pin To Net: Unknown Pin: Pin U2-3
+Added Pin To Net: NetName=IN1 Pin=U3-1
+Added Pin To Net: NetName=EN1 Pin=U3-2
+Added Pin To Net: NetName=IN2 Pin=U3-3
+Added Pin To Net: NetName=+12 Pin=U3-6
+Added Pin To Net: NetName=+5 Pin=U3-7
+Added Pin To Net: NetName=MOTOR1 Pin=U3-9
+Added Pin To Net: NetName=MOTOR2 Pin=U3-10
+Added Pin To Net: NetName=GND Pin=U3-13
+Add Pin To Net: Unknown Pin: Pin X1-1
+Add Pin To Net: Unknown Pin: Pin X1-2
+Added Member To Class: ClassName=schematic_smart_home Member=Component B1 CMT-1271-88-SMT-TR
+Added Member To Class: ClassName=schematic_smart_home Member=Component C1 0.33uF
+Added Member To Class: ClassName=schematic_smart_home Member=Component C2 0.1uF
+Added Member To Class: ClassName=schematic_smart_home Member=Component C3 22PF
+Added Member To Class: ClassName=schematic_smart_home Member=Component C4 22PF
+Added Member To Class: ClassName=schematic_smart_home Member=Component C5 100nF
+Added Member To Class: ClassName=schematic_smart_home Member=Component C6 100nF
+Add Class Member: Failed to add class member : Component D1 RED
+Added Member To Class: ClassName=schematic_smart_home Member=Component J1 PJ-002AH-SMT-TR
+Added Member To Class: ClassName=schematic_smart_home Member=Component J2 TSM-108-01-L-SV
+Added Member To Class: ClassName=schematic_smart_home Member=Component J3 TSM-108-01-L-SV
+Added Member To Class: ClassName=schematic_smart_home Member=Component LDR RS1G
+Added Member To Class: ClassName=schematic_smart_home Member=Component R1 330 O
+Added Member To Class: ClassName=schematic_smart_home Member=Component R2 1K
+Added Member To Class: ClassName=schematic_smart_home Member=Component R3 resistor SMD
+Added Member To Class: ClassName=schematic_smart_home Member=Component R4 10k
+Added Member To Class: ClassName=schematic_smart_home Member=Component RGB LED ASMB-TTF2-0B20B
+Added Member To Class: ClassName=schematic_smart_home Member=Component RT1 10K
+Added Member To Class: ClassName=schematic_smart_home Member=Component S1 TS16-1212-85-BK-100-SMT-TR
+Added Member To Class: ClassName=schematic_smart_home Member=Component U1 ATMEGA8A-AU_C16190
+Added Member To Class: ClassName=schematic_smart_home Member=Component U2 MC78M05ACDTRKG
+Added Member To Class: ClassName=schematic_smart_home Member=Component U3 Driver L293D
+Add Class Member: Failed to add class member : Component X1 16 MHZ

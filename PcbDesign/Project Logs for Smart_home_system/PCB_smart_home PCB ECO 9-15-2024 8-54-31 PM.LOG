@@ -1,0 +1,75 @@
+Removed Pin From Net: NetName=MISO Pin=J2-4
+Removed Pin From Net: NetName=EN1 Pin=J2-5
+Removed Pin From Net: NetName=PIR Pin=J2-6
+Removed Pin From Net: NetName=KEYPAD Pin=J2-7
+Removed Pin From Net: NetName=SERVO Pin=J2-8
+Removed Pin From Net: NetName=MOTOR1 Pin=J2-9
+Removed Pin From Net: NetName=MOTOR2 Pin=J2-10
+Removed Pin From Net: NetName=GND Pin=J2-11
+Removed Pin From Net: NetName=+12 Pin=J2-12
+Removed Pin From Net: NetName=+5 Pin=J2-13
+Change Component Footprint: Designator=J2 Old Footprint=Header New Footprint=CFP127P930X250-10N
+Change Component Comment : Designator=J2 Old Comment=connector;str header;single row;.1 cont centers;.095 tail;gold or gtx;36 contact New Comment=TS-103-T-A-1
+Change component parameters: Designator = "J2" ("J2"); Footprint = "Header"; UniqueID = "\GEBYPCAK" ("\GEBYPCAK")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/datasheet/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "snapeda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/view-part/?ref=search&t=pin%20header%20smd"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "manufacturer"; Value = "Samtec"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "manufacturer part number"; Value = "TS-103-T-A-1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "supplier part number"; Value = "C19164516"; VariantName = "[No Variations]"
+Added Component: Designator=J3(CFP127P930X250-10N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "snapeda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/view-part/?ref=search&t=pin%20header%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer part number"; Value = "TS-103-T-A-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C19164516"; VariantName = "[No Variations]"
+Added Component: Designator=J4(CFP127P930X250-10N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "snapeda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/view-part/?ref=search&t=pin%20header%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer part number"; Value = "TS-103-T-A-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C19164516"; VariantName = "[No Variations]"
+Added Component: Designator=J5(CFP127P930X250-10N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "snapeda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/view-part/?ref=search&t=pin%20header%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer part number"; Value = "TS-103-T-A-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C19164516"; VariantName = "[No Variations]"
+Added Component: Designator=J6(CFP127P930X250-10N)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/datasheet/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "snapeda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.snapeda.com/parts/TS-103-T-A-1/Samtec/view-part/?ref=search&t=pin%20header%20smd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "manufacturer part number"; Value = "TS-103-T-A-1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "supplier part number"; Value = "C19164516"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MISO Pin=J3-1
+Added Pin To Net: NetName=MISO Pin=J3-1
+Added Pin To Net: NetName=EN1 Pin=J3-2
+Added Pin To Net: NetName=PIR Pin=J3-3
+Added Pin To Net: NetName=KEYPAD Pin=J4-1
+Added Pin To Net: NetName=KEYPAD Pin=J4-1
+Added Pin To Net: NetName=SERVO Pin=J4-2
+Added Pin To Net: NetName=MOTOR1 Pin=J4-3
+Added Pin To Net: NetName=MOTOR2 Pin=J5-1
+Added Pin To Net: NetName=MOTOR2 Pin=J5-1
+Added Pin To Net: NetName=GND Pin=J5-2
+Added Pin To Net: NetName=+12 Pin=J5-3
+Added Pin To Net: NetName=+5 Pin=J6-1
+Added Pin To Net: NetName=+5 Pin=J6-1
+Added Member To Class: ClassName=schematic_smart_home Member=Component J3 TS-103-T-A-1
+Added Member To Class: ClassName=schematic_smart_home Member=Component J4 TS-103-T-A-1
+Added Member To Class: ClassName=schematic_smart_home Member=Component J5 TS-103-T-A-1
+Added Member To Class: ClassName=schematic_smart_home Member=Component J6 TS-103-T-A-1

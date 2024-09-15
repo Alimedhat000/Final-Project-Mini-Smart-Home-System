@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=+5 Pin=J2-1
+Removed Pin From Net: NetName=GND Pin=J2-2
+Removed Pin From Net: NetName=KEYPAD Pin=J2-4
+Removed Pin From Net: NetName=SERVO Pin=J2-5
+Removed Pin From Net: NetName=PIR Pin=J2-6
+Removed Pin From Net: NetName=MOTOR1 Pin=J2-7
+Removed Pin From Net: NetName=MOTOR2 Pin=J2-8
+Removed Pin From Net: NetName=TX Pin=J3-1
+Removed Pin From Net: NetName=RX Pin=J3-2
+Removed Pin From Net: NetName=SCK Pin=J3-3
+Removed Pin From Net: NetName=MISO Pin=J3-4
+Removed Pin From Net: NetName=EN1 Pin=J3-5
+Removed Pin From Net: NetName=+12 Pin=J3-6
+Add Pin To Net: Unknown Pin: Pin J2-01
+Add Pin To Net: Unknown Pin: Pin J2-02
+Add Pin To Net: Unknown Pin: Pin J2-04
+Add Pin To Net: Unknown Pin: Pin J2-05
+Add Pin To Net: Unknown Pin: Pin J2-06
+Add Pin To Net: Unknown Pin: Pin J2-07
+Add Pin To Net: Unknown Pin: Pin J2-08
+Add Pin To Net: Unknown Pin: Pin J3-01
+Add Pin To Net: Unknown Pin: Pin J3-02
+Add Pin To Net: Unknown Pin: Pin J3-03
+Add Pin To Net: Unknown Pin: Pin J3-04
+Add Pin To Net: Unknown Pin: Pin J3-05
+Add Pin To Net: Unknown Pin: Pin J3-06
