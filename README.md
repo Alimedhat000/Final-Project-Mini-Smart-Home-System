@@ -34,6 +34,7 @@ The system is composed of two main components:
 ### Prerequisites
 - **Hardware**:
   - ATmega8A Microcontroller
+  - 16MHz Crystal and 22pf Capacitors 
   - Sensors: Temperature, Motion, Light
   - Servo Motor, DC Motor
   - Keypad for password input
@@ -41,6 +42,7 @@ The system is composed of two main components:
   
 - **Software**:
   - Python 3.x
+  - Pyserial
   - OpenCV, TensorFlow, DeepFace, Mediapipe
   - Tkinter (GUI)
   - Arduino IDE (for ATmega8A programming)
@@ -70,5 +72,5 @@ python GUI/GUI&Hand_detector.py
  and all other files can be found in the `PcbDesign/` directory.
 
 ### Acknowledgements
-Special thanks to **MINDCLOUD**, our FaceRecognition Team **Rowan** and **Ebraim**, the ATMEGA8a team **ALi** and **Ahmed** , and our PCB designer **Menna** 
+Special thanks to **MindCloud Team**, our **FaceRecognition Team** **Rowan** and **Ebraim**, the **ATMEGA8a** team **ALi** and **Ahmed** , and our **PCB designer** **Menna** 
 
