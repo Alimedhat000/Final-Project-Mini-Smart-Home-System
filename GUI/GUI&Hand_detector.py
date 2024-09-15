@@ -17,13 +17,13 @@ import tkinter as tk
 from tkinter import simpledialog, messagebox, Listbox, Scrollbar, Toplevel
 from PIL import Image, ImageTk
 import time
-#import serial
+import serial
 from pathlib import Path
 import mediapipe as mp              
 import numpy as np
 
 # set path of the database and temporary image
-db_path = (Path(__file__).resolve().parent / 'database').as_posix()
+db_path = (Path(__file__).resolve().parent / 'Images').as_posix()
 temp_image_path = (Path(__file__).resolve().parent / 'detected_face.jpg').as_posix()
 
 
@@ -52,7 +52,7 @@ detector = cv2.FaceDetectorYN.create(
     nms_threshold=0.4
 )
 
-#Initialize the hand detector using mediapipe
+#Initialize the hand detector using MediaPipe
 hand_detector = mp.solutions.hands.Hands(
     max_num_hands = 1,
     min_detection_confidence = 0.7,
@@ -72,13 +72,13 @@ mpHands = mp.solutions.hands
 
 
 # Initialize serial communication
-# ser = serial.Serial('COM4', 19200)
+ser = serial.Serial('COM4', 19200)
 
-# def receive_data():
-#     if ser.in_waiting > 0:
-#         received_data = ser.readline().decode('utf-8').rstrip()  # Read and decode received data
-#         print(f"Received from ATmega8A: {received_data}")
-        
+def receive_data():
+    if ser.in_waiting > 0:
+        received_data = ser.read(ser.in_waiting).decode('ascii').rstrip()
+        print(f"{received_data}")
+       
 
 def add_to_database(name, frame):
     # Detect the face in the frame
@@ -156,30 +156,82 @@ def show_delete_face_dialog():
     listbox.bind("<Double-1>", delete_face_from_listbox)
     update_face_list()      #calling function to update the list
 
+# Global flag to check if the dialog is already open 
+is_dialog_open = False
 
-#function to show notification dialog when unknown face is detected
 def show_add_or_open_dialog():
-    #showing notification
-    choice = messagebox.askyesnocancel("Unknown Face Detected",
-                                       'Unknown face detected. Do you want to add it to the database?(yes=add)(no=open the door)')
-    if choice:
-        #add face to the database is chosen
-        name = simpledialog.askstring("Add Face", "Enter name for the new face:")
+    global is_dialog_open
 
-        #when name is entered, add the face image to the databse
-        if name:
-            ret, frame = cap.read()
-            if ret:
-                add_to_database(name, frame)
-            else:
-                messagebox.showerror("Error", "Failed to capture frame.")
+    # If a dialog is already open, return and do nothing
+    if is_dialog_open:
+        return
 
-    #only open the door is chosen            
-    elif choice is False:   
-        #start the window for openning the door
-        show_open_door_window()
-    else:
-        messagebox.showinfo("Cancelled", "Operation cancelled.")
+    is_dialog_open = True  # Set the flag to true to indicate that the dialog is open
+
+    dialog_window = tk.Toplevel()  # Create a new window for the dialog
+    dialog_window.title("Unknown Face Detected")
+    dialog_window.geometry("300x150")  # Set size for the dialog window
+
+    # Reset the flag when the dialog window is manually closed
+    def on_close():
+        global is_dialog_open
+        is_dialog_open = False
+        dialog_window.destroy()
+
+    dialog_window.protocol("WM_DELETE_WINDOW", on_close)  # Bind the close button to reset the flag
+
+    # Label to show the message
+    label = tk.Label(dialog_window, text="Unknown face detected.\nDo you want to add it or open the door?")
+    label.pack(pady=10)
+
+    # Function to handle adding the face
+    def add_face():
+        global is_dialog_open
+        try:
+            name = simpledialog.askstring("Add Face", "Enter name for the new face:")
+            if name:
+                ret, frame = cap.read()  # Assuming cap is your camera capture object
+                if ret:
+                    add_to_database(name, frame)  # Add face to the database
+                else:
+                    messagebox.showerror("Error", "Failed to capture frame.")
+        finally:
+            is_dialog_open = False  # Reset the flag when the dialog is closed
+            dialog_window.destroy()  # Close the dialog after adding
+
+    # Function to handle opening the door
+    def open_door():
+        global is_dialog_open
+        try:
+            Open_Door_and_show_window()  # Show the open door window
+        finally:
+            is_dialog_open = False  # Reset the flag when the dialog is closed
+            dialog_window.destroy()  # Close the dialog after opening
+
+    # Function to handle canceling the operation
+    def cancel_operation():
+        global is_dialog_open
+        try:
+            messagebox.showinfo("Cancelled", "Operation cancelled.")
+        finally:
+            is_dialog_open = False  # Reset the flag when the dialog is closed
+            dialog_window.destroy()  # Close the dialog after canceling
+
+    # Add button
+    add_button = tk.Button(dialog_window, text="Add", command=add_face)
+    add_button.pack(side=tk.LEFT, padx=20, pady=20)
+
+    # Open button
+    open_button = tk.Button(dialog_window, text="Open", command=open_door)
+    open_button.pack(side=tk.LEFT, padx=20, pady=20)
+
+    # Cancel button
+    cancel_button = tk.Button(dialog_window, text="Cancel", command=cancel_operation)
+    cancel_button.pack(side=tk.LEFT, padx=20, pady=20)
+
+    dialog_window.transient()  # Make the dialog modal (block interaction with the main window)
+    dialog_window.grab_set()   # Ensure it captures all events
+
 
 # Function to display a dialog for changing password
 def show_change_password_dialog():
@@ -188,7 +240,7 @@ def show_change_password_dialog():
         new_password = password_entry.get()         #enter the password
         if new_password:
             global saved_password
-            # ser.write(f"CHANGE_PASS:{new_password}".encode())
+            ser.write(f"CHANGE_PASS:{new_password}".encode())
             saved_password = new_password
             messagebox.showinfo("Success", "Password changed successfully.")
             change_password_window.destroy()  # Close the window after saving
@@ -205,7 +257,7 @@ def show_change_password_dialog():
     #label asking the user to enter new password
     tk.Label(change_password_window, text="Enter new password:").pack(padx=20, pady=10)
 
-    #creating entery widget to type the new password with hiding password by *
+    #creating entry widget to type the new password with hiding password by *
     password_entry = tk.Entry(change_password_window, show='*')
     password_entry.pack(padx=20, pady=10)
 
@@ -220,13 +272,20 @@ def show_open_door_window():
     #create and place label of the notification
     label = tk.Label(open_door_window, text="Door is now open!")
     label.pack(padx=20, pady=20)
+    # Auto-close the window after 5 seconds (5000 milliseconds)
+    open_door_window.after(5000, open_door_window.destroy)
 
-#function that handels live vid stream with face detection, recognition and hand geature detection
+def Open_Door_and_show_window():
+    show_open_door_window()
+    ser.write("FORCE_OPEN".encode())
+
+
+#function that handles live vid stream with face detection, recognition and hand gesture detection
 def update_frame():
     global frame_counter,unknown_start_time, unknown_detected, last_recognized_face     #initializing global variables
 
     ret, frame = cap.read()                                     # Capture the frame from the webcam
-    frame = cv2.flip(frame,1)                                   #fliping frame horizontally
+    frame = cv2.flip(frame,1)                                   #flipping frame horizontally
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)          #convert frame to RGB
     # Detect hands in the frame using a hand detector
     output = hand_detector.process(rgb_frame)
@@ -256,24 +315,24 @@ def update_frame():
                     res = DeepFace.find(img_path=temp_image_path, db_path=db_path, enforce_detection=False, model_name="Facenet", silent= True)
                     #when faces are recognized
                     if len(res[0]) > 0: 
-                        name = os.path.basename(res[0]['identity'][0]).split("_")[0]                            # extract name 
-                        cv2.rectangle(frame, (x, y), (xmax, ymax), (0, 255, 0), 2)                              #drawing green bownding rectangle
+                        name = os.path.splitext(os.path.basename(res[0]['identity'][0]))[0].split("_")[0].capitalize()                            # extract name 
+                        cv2.rectangle(frame, (x, y), (xmax, ymax), (0, 255, 0), 2)                              #drawing green bounding rectangle
                         cv2.putText(frame, name, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)    #printing the name of the person
                         
                         #detect hand gesture to open the door  
                         landmarks_list = []                                          #creating a list to store hand landmarks
                         if hands:
-                            landmarks = output.multi_hand_landmarks[0]                                  #extracting hand lanmarks
+                            landmarks = output.multi_hand_landmarks[0]                                  #extracting hand landmarks
                             draw_utils.draw_landmarks(frame, landmarks, mpHands.HAND_CONNECTIONS)       #drawing hand landmarks
             
                             for lm in landmarks.landmark:
-                                landmarks_list.append((lm.x, lm.y))     #saving coorinates of each landmark
+                                landmarks_list.append((lm.x, lm.y))     #saving coordinates of each landmark
             
                             if hand_closed(landmarks_list) == True:
                                 # If the recognized face is different from the last one, send a serial message
                                 if last_recognized_face != name:  
-                                    #openning the door
-                                    # ser.write("FACE_DETECTED".encode()) 
+                                    #opening the door
+                                    ser.write("FACE_DETECTED".encode()) 
                                     #showing notification that the door is open
                                     show_open_door_window()
                                     
@@ -319,7 +378,8 @@ def update_frame():
         # Update the image in the panel with the new frame
         panel.imgtk = img
         panel.config(image=img)
-        # receive_data()
+        # Receiving Data from all peripherals connected to Atmega8 
+        receive_data()
         
     #update the frame each 50 msec
     root.after(50, update_frame)
@@ -331,7 +391,7 @@ root = tk.Tk()
 root.title("Face Recognition System")
 
 # Add "Open Door" button
-btn_open_door = tk.Button(root, text="Open Door", command=show_open_door_window)
+btn_open_door = tk.Button(root, text="Open Door", command=Open_Door_and_show_window)
 btn_open_door.pack(side=tk.LEFT, padx=10, pady=10)
 
 # Add "Delete Face" button
