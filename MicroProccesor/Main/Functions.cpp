@@ -11,7 +11,7 @@ bool PressedEnter = false;
 bool ForceOpen = false;
 bool FaceDetected = false;
 
-Servo Door;
+
 
 void InitializePins() {
   pinMode(MOTOR_DRIVER_INPUT1, OUTPUT);
@@ -27,7 +27,8 @@ void InitializePins() {
   pinMode(BUZZER_PIN, OUTPUT);
 
   digitalWrite(TEST_LED, LOW);
-  Door.attach(SERVO_PIN);
+
+  Door.write(90);
 }
 
 void HandleSerialInput() {
@@ -89,11 +90,11 @@ void CheckPassword() {
 }
 
 void OpenDoor() {
-  Door.write(90);
+  Door.write(180);
   Serial.println("DOOR Opened");
 }
 void CLoseDoor() {
-  Door.write(0);
+  Door.write(90);
   Serial.println("DOOR Closed");
 }
 
@@ -102,42 +103,41 @@ char GetKeyValue() {
   int myADC = analogRead(KEYPAD_PIN);
 
 
-    switch (myADC) {
-      case 0 ... 30:
-        return '1';
-      case 70 ... 99:
-        return '2';
-      case 110 ... 170:
-        return '3';
-      case 180 ... 230:
-        return 'A';
-      case 240 ... 260:
-        return '4';
-      case 270 ... 300:
-        return '5';
-      case 301 ... 340:
-        return '6';
-      case 341 ... 370:
-        return 'B';
-      case 371 ... 410:
-        return '7';
-      case 411 ... 440:
-        return '8';
-      case 441 ... 460:
-        return '9';
-      case 461 ... 480:
-        return 'C';
-      case 481 ... 510:
-        return '*';
-      case 511 ... 525:
-        return '0';
-      case 526 ... 540:
-        return '#';
-      case 541 ... 560:
-        return 'D';
-      default:
-        return 0;
-    
+  switch (myADC) {
+    case 0 ... 30:
+      return '1';
+    case 70 ... 99:
+      return '2';
+    case 110 ... 170:
+      return '3';
+    case 180 ... 230:
+      return 'A';
+    case 240 ... 260:
+      return '4';
+    case 270 ... 300:
+      return '5';
+    case 301 ... 340:
+      return '6';
+    case 341 ... 370:
+      return 'B';
+    case 371 ... 410:
+      return '7';
+    case 411 ... 440:
+      return '8';
+    case 441 ... 460:
+      return '9';
+    case 461 ... 480:
+      return 'C';
+    case 481 ... 510:
+      return '*';
+    case 511 ... 525:
+      return '0';
+    case 526 ... 540:
+      return '#';
+    case 541 ... 560:
+      return 'D';
+    default:
+      return 0;
   }
 }
 
@@ -194,7 +194,15 @@ void DisplayTempOnRGB(float temperature) {
 
 void BeepBuzzer() {
   digitalWrite(BUZZER_PIN, HIGH);
+  delay(1000);
+  digitalWrite(BUZZER_PIN, LOW);
   delay(500);
+  digitalWrite(BUZZER_PIN, HIGH);
+  delay(1000);
+  digitalWrite(BUZZER_PIN, LOW);
+  delay(500);
+  digitalWrite(BUZZER_PIN, HIGH);
+  delay(1000);
   digitalWrite(BUZZER_PIN, LOW);
 }
 void StartFan() {
@@ -209,34 +217,32 @@ void SetFanSpeed(int value) {
 
 void ControlFanSpeed(float temperature) {
   int speed;
-  if (temperature > 30) {
+  if (temperature >= 30) {
     speed = 255;  // Max speed
   } else if (temperature > 20) {
-    speed = map(temperature, 20, 30, 128, 255);
+    speed = map(temperature, 20, 30, 20, 255);
   } else {
-    speed = 128;
+    speed = 20;
   }
   SetFanSpeed(speed);
 }
 
 void DetectMotion() {
-  if (analogRead(PIR_PIN) > 500) {
+  if (analogRead(PIR_PIN) > 300) {
     Serial.println(F("Motion detected: Someone is inside."));
-  }
-  else{
+  } else {
     Serial.println(F("NO Motion detected"));
   }
+  Serial.println(analogRead(PIR_PIN));
 }
 
 void ControlLight() {
   int lightLevel = analogRead(LDR_PIN);
   Serial.print(F("LIGHT LEVEL: "));
   Serial.println(lightLevel);
-  if( lightLevel <  250 ){
-    digitalWrite(TEST_LED,HIGH);
-  }
-  else{
-    digitalWrite(TEST_LED,LOW);
+  if (lightLevel < 250) {
+    digitalWrite(TEST_LED, HIGH);
+  } else {
+    digitalWrite(TEST_LED, LOW);
   }
 }
-

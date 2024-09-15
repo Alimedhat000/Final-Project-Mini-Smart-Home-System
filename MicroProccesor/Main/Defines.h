@@ -24,6 +24,7 @@ extern bool PressedEnter;
 
 // Servo configuration
 #define SERVO_PIN PIN_PB1
+extern Servo Door;
 
 // Sensors
 #define LDR_PIN PIN_PC2

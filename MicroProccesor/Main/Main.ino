@@ -1,5 +1,6 @@
 #include "Defines.h"
 
+Servo Door;
 unsigned long correctPassTime = 0;  // Time when the correct password was entered
 bool systemResetRequired = false;   // Flag to indicate if reset is needed
 static unsigned long lastReadTime = 0;
@@ -7,18 +8,18 @@ static unsigned long lastSenseTime = 0;
 unsigned long currentTime = millis();
 
 void setup() {
+  Door.attach(SERVO_PIN);
   InitializePins();
   StartFan();
-  Serial.begin(9600);
+  Serial.begin(19200);
 }
-
 void loop() {
   currentTime = millis();
   int temperature = GetTemp();
   HandleSerialInput();
 
   // Get keypad input every 150ms
-  if (currentTime - lastReadTime > 250) {
+  if (currentTime - lastReadTime > 220) {
     lastReadTime = currentTime;
     char key = GetKeyValue();
     if (key) {
@@ -45,8 +46,8 @@ void loop() {
       CorrectPass = false;  // Allow for the next password check
     } else {
       // Incorrect password handling
-      BeepBuzzer();
       Serial.println(F("WARNING! WRONG PASSWORD ENTERED!"));
+      BeepBuzzer();
       PressedEnter = false;  // Reset after handling incorrect password
     }
   }
@@ -71,7 +72,7 @@ void loop() {
   if (systemResetRequired) {
     // Keep reading and controlling sensors for the full 10 seconds
 
-    if (millis() - lastSenseTime > 500) {
+    if (millis() - lastSenseTime > 600) {
       lastSenseTime = millis();
       DetectMotion();
       DisplayTempOnRGB(temperature);
